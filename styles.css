@@ -1,0 +1,225 @@
+
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top left, #24204a, #10101c 45%, #080810);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    background: rgba(30, 30, 50, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    padding: 30px;
+    border-radius: 20px;
+    width: 380px;
+    max-width: 100%;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(124, 58, 237, 0.12);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        0 0 35px rgba(124, 58, 237, 0.2);
+}
+
+/* ===== HEADING ===== */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg, #a78bfa, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== INPUT CONTAINER ===== */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* ===== INPUT FIELD ===== */
+input[type="text"] {
+    width: 70%;
+    padding: 13px 15px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #8888a5;
+}
+
+input[type="text"]:focus {
+    border-color: #a78bfa;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.25);
+}
+
+/* ===== ADD TASK BUTTON ===== */
+button {
+    width: 30%;
+    padding: 12px 8px;
+
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    border: none;
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #9333ea, #c026d3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.45);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* ===== TASK LIST ===== */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ===== INDIVIDUAL TASK ===== */
+li {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 13px 12px;
+    margin-bottom: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    color: #e4e4f0;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+li:hover {
+    background: rgba(167, 139, 250, 0.1);
+    border-color: rgba(167, 139, 250, 0.3);
+    transform: translateX(4px);
+}
+
+/* ===== COMPLETED TASK ===== */
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: #a78bfa;
+}
+
+/* ===== DELETE BUTTON ===== */
+li button {
+    width: auto;
+    padding: 7px 12px;
+
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 7px;
+
+    color: #d6243f;
+    font-size: 12px;
+
+    cursor: pointer;
+    box-shadow: none;
+
+    transition: all 0.3s ease;
+}
+
+li button:hover {
+    background: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+    transform: scale(1.05);
+    box-shadow: 0 3px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* ===== TASK ANIMATION ===== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 480px) {
+    .container {
+        padding: 22px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"] {
+        font-size: 13px;
+        min-width: 0;
+    }
+
+    button {
+        font-size: 12px;
+    }
+}
+
