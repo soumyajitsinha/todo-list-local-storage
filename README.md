@@ -29,7 +29,7 @@ A simple and elegant To-Do List application built using **HTML, CSS, and Vanilla
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/todo-list-local-storage.git
+https://github.com/soumyajitsinha/todo-list-local-storage.git
 ```
 
 ### 2. Navigate to the project folder
